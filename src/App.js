@@ -19,8 +19,7 @@ class App extends Component {
   {
     if(this.state.clickedFighters.includes(id))
     {
-      this.setState({status: "Incorrect!"});
-      this.setState({score: 0});
+      this.setState({status: "Incorrect!", score: 0, clickedFighters: []});
     }
     else
     {
@@ -32,26 +31,23 @@ class App extends Component {
 
     const randomizedFighters = this.state.fighters.sort((a,b) => 0.5 - Math.random());
     this.setState({fighters: randomizedFighters});
-    // this.randomizeFighters();
   }
-
-  // randomizeFighters = () =>
-  // {
-  //   const randomizedFighters = this.state.fighters.sort((a,b) => 0.5 - Math.random());
-  //   this.setState({fighters: randomizedFighters});
-  // }
 
   render() {
     return (
       <Fragment>
-        <Jumbotron title={"Clicky Game"} status={this.state.status} score={this.state.score}/>
+        <Jumbotron 
+          title={"Clicky Game"} 
+          description={"Score a point by clicking any image that hasn't already been clicked. Game ends whens when a previously clicked image is clicked."}
+          status={this.state.status} 
+          score={this.state.score}
+        />
         <Container>
           {this.state.fighters.map(fighter =>
             <FighterImg
               key={fighter.id}
               id={fighter.id}
               image={fighter.image}
-              // randomizeFighters={this.randomizeFighters}
               fighterClick={this.fighterClick}
               />
             )}

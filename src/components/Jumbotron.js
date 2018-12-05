@@ -7,7 +7,7 @@ const Jumbotron = (props) =>
             <div className="container-fluid">
                 <div className="row">
                     <div className="col"><h3 className="font-weight-bold">{props.status}</h3></div>
-                    <div className="col"><h1 className="display-4 font-weight-bold">{props.title}</h1></div>
+                    <div className="col"><h1 className="display-4 font-weight-bold">{props.title}</h1><h5>{props.description}</h5></div>
                     <div className="col"><h3 className="font-weight-bold">Score: {props.score}</h3></div>
                 </div> 
             </div>
