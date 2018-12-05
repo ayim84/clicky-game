@@ -27,6 +27,10 @@ class App extends Component {
       this.state.clickedFighters.push(id);
       const newScore = this.state.score + 1;
       this.setState({score: newScore});
+      if(newScore > this.state.topScore)
+      {
+        this.setState({topScore: newScore});
+      }
     }
 
     const randomizedFighters = this.state.fighters.sort((a,b) => 0.5 - Math.random());
@@ -41,6 +45,7 @@ class App extends Component {
           description={"Score a point by clicking any image that hasn't already been clicked. Game ends whens when a previously clicked image is clicked."}
           status={this.state.status} 
           score={this.state.score}
+          topScore={this.state.topScore}
         />
         <Container>
           {this.state.fighters.map(fighter =>
