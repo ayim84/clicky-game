@@ -42,7 +42,10 @@ class App extends Component {
       <Fragment>
         <Jumbotron 
           title={"Clicky Game"} 
-          description={"Score a point by clicking any image that hasn't already been clicked. Game ends whens when a previously clicked image is clicked."}
+          description1={"The goal of the game is to click on each image once."}
+          description2={"One point is awarded each time an image is clicked for the first time."}
+          description3={"The images will randomize after each click."}
+          description4={"The game ends when an image is clicked more than once."}
           status={this.state.status} 
           score={this.state.score}
           topScore={this.state.topScore}
